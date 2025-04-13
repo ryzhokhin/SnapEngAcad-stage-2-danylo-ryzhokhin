@@ -81,6 +81,19 @@ function editCardContent(card, newTitle, newImageURL) {
   console.log("new card:", newTitle, "- html: ", card);
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  fetch('./tools.json')
+      .then(response => {
+        if(!response.ok) {
+          throw Error(response.statusText);
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+      })
+})
+
 // This calls the addCards() function when the page is first loaded
 document.addEventListener("DOMContentLoaded", showCards);
 

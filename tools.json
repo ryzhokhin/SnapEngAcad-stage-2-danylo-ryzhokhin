@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "ChatGPT",
+    "category": "Text Generation",
+    "isFree": true,
+    "rating": 4.8,
+    "description": "AI chatbot developed by OpenAI for generating human-like responses.",
+    "website": "https://chat.openai.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"
+  },
+  {
+    "id": 2,
+    "name": "Midjourney",
+    "category": "Image Generation",
+    "isFree": false,
+    "rating": 4.7,
+    "description": "Generates artistic images based on text prompts.",
+    "website": "https://www.midjourney.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/4/47/Midjourney_Logo.png"
+  },
+  {
+    "id": 3,
+    "name": "GitHub Copilot",
+    "category": "Code Completion",
+    "isFree": false,
+    "rating": 4.6,
+    "description": "AI pair programmer that helps you write code faster.",
+    "website": "https://github.com/features/copilot",
+    "logo": "https://github.githubassets.com/images/modules/site/features/copilot.png"
+  },
+  {
+    "id": 4,
+    "name": "Runway",
+    "category": "Video Editing",
+    "isFree": true,
+    "rating": 4.5,
+    "description": "Video editing platform with AI-powered tools.",
+    "website": "https://runwayml.com/",
+    "logo": "https://assets-global.website-files.com/621e7a51c9f8cf5e225f3a52/63d17fccc4ba8b250c388a11_logo-dark.svg"
+  },
+  {
+    "id": 5,
+    "name": "ElevenLabs",
+    "category": "Voice Generation",
+    "isFree": true,
+    "rating": 4.4,
+    "description": "AI voice synthesis and cloning tool.",
+    "website": "https://www.elevenlabs.io/",
+    "logo": "https://cdn.11labs.io/logo-dark.svg"
+  },
+  {
+    "id": 6,
+    "name": "Notion AI",
+    "category": "Productivity",
+    "isFree": true,
+    "rating": 4.2,
+    "description": "AI assistant built into Notion to help with writing and organizing.",
+    "website": "https://www.notion.so/product/ai",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg"
+  }
+]
