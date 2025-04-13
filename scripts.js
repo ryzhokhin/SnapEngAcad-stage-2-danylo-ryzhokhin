@@ -92,9 +92,8 @@ const searchInput = document.getElementById("search-input");
 
 searchInput.addEventListener("input", () =>{
   const query = searchInput.value;
-  const filteredTools = tools.filter(tool => {
-    tool.name.toLowerCase().includes(query.toLowerCase());
-  })
+  const filteredTools = tools.filter(tool =>
+    tool.name.toLowerCase().includes(query.toLowerCase()));
   console.log("new cards searched:", filteredTools);
   showCards(filteredTools);
 })
