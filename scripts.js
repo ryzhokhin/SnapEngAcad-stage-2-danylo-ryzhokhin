@@ -95,6 +95,7 @@ searchInput.addEventListener("input", () =>{
   const filteredTools = tools.filter(tool => {
     tool.name.toLowerCase().includes(query.toLowerCase());
   })
+  console.log("new cards searched:", filteredTools);
   showCards(filteredTools);
 })
 
