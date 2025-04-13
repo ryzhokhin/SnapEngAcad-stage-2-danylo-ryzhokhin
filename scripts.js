@@ -87,17 +87,30 @@ function editCardContent(card, tool) {
 
 
 // Search Logic
+function setupSearch(){
+  const searchInput = document.getElementById("search-input");
+  if(!searchInput) return;
+  console.log("searchInput initialized");
+  searchInput.addEventListener("input", () =>{
+    const query = searchInput.value;
+    const filteredTools = tools.filter(tool =>
+        tool.name.toLowerCase().includes(query.toLowerCase()));
+    console.log("new cards searched:", filteredTools);
+    showCards(filteredTools);
+  })
+}
 
-const searchInput = document.getElementById("search-input");
 
-searchInput.addEventListener("input", () =>{
-  const query = searchInput.value;
-  const filteredTools = tools.filter(tool =>
-    tool.name.toLowerCase().includes(query.toLowerCase()));
-  console.log("new cards searched:", filteredTools);
-  showCards(filteredTools);
+
+// Set up event
+document.addEventListener("DOMContentLoaded", () => {
+  try{
+    setupSearch();
+  }
+  catch(e){
+    console.error(e);
+  }
 })
-
 
 
 // This calls the addCards() function when the page is first loaded
