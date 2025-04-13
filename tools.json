@@ -17,7 +17,7 @@
     "rating": 4.7,
     "description": "Generates artistic images based on text prompts.",
     "website": "https://www.midjourney.com",
-    "logo": "https://upload.wikimedia.org/wikipedia/en/4/47/Midjourney_Logo.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Midjourney_Emblem.png"
   },
   {
     "id": 3,
@@ -27,7 +27,7 @@
     "rating": 4.6,
     "description": "AI pair programmer that helps you write code faster.",
     "website": "https://github.com/features/copilot",
-    "logo": "https://github.githubassets.com/images/modules/site/features/copilot.png"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/3/30/42_e_43.png"
   },
   {
     "id": 4,
@@ -37,7 +37,7 @@
     "rating": 4.5,
     "description": "Video editing platform with AI-powered tools.",
     "website": "https://runwayml.com/",
-    "logo": "https://assets-global.website-files.com/621e7a51c9f8cf5e225f3a52/63d17fccc4ba8b250c388a11_logo-dark.svg"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Runway_Logo.png"
   },
   {
     "id": 5,
@@ -47,7 +47,7 @@
     "rating": 4.4,
     "description": "AI voice synthesis and cloning tool.",
     "website": "https://www.elevenlabs.io/",
-    "logo": "https://cdn.11labs.io/logo-dark.svg"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e2/ElevenLabs_logo_%282022-2024%29.png"
   },
   {
     "id": 6,
