@@ -111,9 +111,11 @@ function setupIsFreeFilter(){
         const filteredTools = tools.filter(tool =>
         tool.isFree);
         showCards(filteredTools);
+        return;
       }else if(value==="not-free"){
         const filteredTools = tools.filter(tool => !tool.isFree);
         showCards(filteredTools);
+        return;
       }
       showCards(tools);
   })
