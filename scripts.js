@@ -41,6 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 
+//Card Loading Logic
+
 // Your final submission should have much more data than this, and
 // you should use more than just an array of strings to store it all.
 
@@ -82,6 +84,20 @@ function editCardContent(card, tool) {
   // select "Inspect", then click on the "Console" tab
   console.log("new card:", tool.name, "- html: ", card);
 }
+
+
+// Search Logic
+
+const searchInput = document.getElementById("search-input");
+
+searchInput.addEventListener("input", () =>{
+  const query = searchInput.value;
+  const filteredTools = tools.filter(tool => {
+    tool.name.toLowerCase().includes(query.toLowerCase());
+  })
+  showCards(filteredTools);
+})
+
 
 
 // This calls the addCards() function when the page is first loaded
