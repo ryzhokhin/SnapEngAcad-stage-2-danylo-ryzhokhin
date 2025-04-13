@@ -10,8 +10,15 @@
   <body>
     <header class="main-header">
       <h1 class="title">AI Tools Catalog</h1>
-      <div>
+      <div class="search">
         <input type="text" id="search-input" placeholder="Search tools... "/>
+      </div>
+      <div class="filter-isFree">
+        <select id="filter-free">
+          <option value="all">All</option>
+          <option value="free">Free</option>
+          <option value="not-free">Not Free</option>
+        </select>
       </div>
     </header>
     <div id="card-container"></div>

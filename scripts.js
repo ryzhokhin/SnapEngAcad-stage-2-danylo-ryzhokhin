@@ -100,12 +100,30 @@ function setupSearch(){
   })
 }
 
-
+//  Is Free filter
+function setupIsFreeFilter(){
+  const isFreeFilter = document.getElementById("filter-free");
+  if(!isFreeFilter) return;
+  console.log("new isFreeFilter initialized");
+  isFreeFilter.addEventListener("change", () =>{
+    const value = isFreeFilter.value;
+      if(value ==="free"){
+        const filteredTools = tools.filter(tool =>
+        tool.isFree);
+        showCards(filteredTools);
+      }else if(value==="not-free"){
+        const filteredTools = tools.filter(tool => !tool.isFree);
+        showCards(filteredTools);
+      }
+      showCards(tools);
+  })
+}
 
 // Set up event
 document.addEventListener("DOMContentLoaded", () => {
   try{
     setupSearch();
+    setupIsFreeFilter();
   }
   catch(e){
     console.error(e);
