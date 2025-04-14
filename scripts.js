@@ -160,6 +160,43 @@ function categoryFilter(data){
 }
 
 
+// Sorting Logic
+function setupSorting(){
+  const sortType = document.getElementById("sort-type");
+  if(!sortType) return;
+  console.log("New sort type initialized");
+  sortType.classList.add("change", applyFilters);
+}
+
+function sortFilter(data){
+  const sortType = document.getElementById("sort-type");
+  const value = sortType.value;
+  switch(value){
+    case "rating-top":
+      return data.sort(function (a, b) {
+        if((b-a)>0) return -1;
+      })
+      break;
+    case "rating-bottom":
+      return data.sort(function (a, b) {
+        return a.rating-b.rating;
+      })
+
+    case "naming-A-Z":
+      return data.sort(function (a, b) {
+        return a.name.localeCompare(b.name);
+      })
+
+    case "name-Z-A":
+      return data.sort(function (a, b) {
+        return b.name.localeCompare(b.name);
+      })
+
+    default:
+      return data;
+  }
+}
+
 
 //  Apply filters
 function applyFilters(){
@@ -168,6 +205,7 @@ function applyFilters(){
   filteredTools = searchFilter(filteredTools);
   filteredTools = isFreeFilter(filteredTools);
   filteredTools = categoryFilter(filteredTools);
+  filteredTools = sortFilter(filteredTools);
 
   showCards(filteredTools);
 }
@@ -178,6 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setupSearch();
     setupIsFreeFilter();
     setupCategories();
+    setupSorting();
   }
   catch(e){
     console.error(e);
