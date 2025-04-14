@@ -165,7 +165,7 @@ function setupSorting(){
   const sortType = document.getElementById("sort-type");
   if(!sortType) return;
   console.log("New sort type initialized");
-  sortType.classList.add("change", applyFilters);
+  sortType.addEventListener("change", applyFilters)
 }
 
 function sortFilter(data){
