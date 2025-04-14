@@ -91,34 +91,46 @@ function setupSearch(){
   const searchInput = document.getElementById("search-input");
   if(!searchInput) return;
   console.log("searchInput initialized");
-  searchInput.addEventListener("input", () =>{
-    const query = searchInput.value;
-    const filteredTools = tools.filter(tool =>
-        tool.name.toLowerCase().includes(query.toLowerCase()));
-    console.log("new cards searched:", filteredTools);
-    showCards(filteredTools);
-  })
+  searchInput.addEventListener("input", applyFilters);
 }
+
+function searchFilter(data){
+  const searchInput = document.getElementById("search-input");
+  const query = searchInput.value;
+  return data.filter(tool =>
+      tool.name.toLowerCase().includes(query.toLowerCase()));
+}
+
 
 //  Is Free filter
 function setupIsFreeFilter(){
   const isFreeFilter = document.getElementById("filter-free");
   if(!isFreeFilter) return;
   console.log("new isFreeFilter initialized");
-  isFreeFilter.addEventListener("change", () =>{
-    const value = isFreeFilter.value;
-      if(value ==="free"){
-        const filteredTools = tools.filter(tool =>
-        tool.isFree);
-        showCards(filteredTools);
-        return;
-      }else if(value==="not-free"){
-        const filteredTools = tools.filter(tool => !tool.isFree);
-        showCards(filteredTools);
-        return;
-      }
-      showCards(tools);
-  })
+  isFreeFilter.addEventListener("change", applyFilters);
+}
+
+function isFreeFilter(data){
+  const isFreeFilter = document.getElementById("filter-free");
+  const value = isFreeFilter.value;
+  if(value ==="free"){
+    return data.filter(tool => tool.isFree);
+  }else if(value==="not-free"){
+    return data.filter(tool => !tool.isFree);
+  }
+  return data;
+}
+
+
+
+//  Apply filters
+function applyFilters(){
+  let filteredTools = [...tools];
+
+  filteredTools = searchFilter(filteredTools);
+  filteredTools = isFreeFilter(filteredTools);
+
+  showCards(filteredTools);
 }
 
 // Set up event
