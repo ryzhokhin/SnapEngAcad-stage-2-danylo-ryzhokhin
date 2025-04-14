@@ -22,7 +22,7 @@
   {
     "id": 3,
     "name": "GitHub Copilot",
-    "category": "Code Completion",
+    "category": "Coding Assistants",
     "isFree": false,
     "rating": 4.6,
     "description": "AI pair programmer that helps you write code faster.",
@@ -32,7 +32,7 @@
   {
     "id": 4,
     "name": "Runway",
-    "category": "Video Editing",
+    "category": "Video Tools",
     "isFree": true,
     "rating": 4.5,
     "description": "Video editing platform with AI-powered tools.",
@@ -42,7 +42,7 @@
   {
     "id": 5,
     "name": "ElevenLabs",
-    "category": "Voice Generation",
+    "category": "Voice & Audio",
     "isFree": true,
     "rating": 4.4,
     "description": "AI voice synthesis and cloning tool.",
@@ -52,7 +52,7 @@
   {
     "id": 6,
     "name": "Notion AI",
-    "category": "Productivity",
+    "category": "Productivity / Automation",
     "isFree": true,
     "rating": 4.2,
     "description": "AI assistant built into Notion to help with writing and organizing.",

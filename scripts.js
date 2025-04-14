@@ -23,7 +23,8 @@
  *
  */
 
-let tools = []
+let tools = [];
+let activeCategories = [];
 
 document.addEventListener("DOMContentLoaded", () => {
   fetch('./tools.json')
@@ -122,6 +123,43 @@ function isFreeFilter(data){
 }
 
 
+//  Category Filter Logic
+function setupCategories(){
+  const tags = document.querySelectorAll("#category-tags .tag");
+  tags.forEach(tag => {
+    const category = tag.dataset.category;
+    tag.addEventListener("click", () => toggleCategory(category));
+  })
+}
+
+
+function toggleCategory(category){
+  const index = activeCategories.indexOf(category);
+  if (index > -1) {
+    activeCategories.splice(index, 1);
+  }else{
+    activeCategories.push(category);
+  }
+
+  updateCategoryUI();
+  applyFilters();
+}
+
+function updateCategoryUI(){
+  const tags = document.querySelectorAll("#category-tags .tag");
+  tags.forEach(tag => {
+    const category = tag.dataset.category;
+    tag.classList.toggle("active", activeCategories.includes(category));
+  })
+}
+
+function categoryFilter(data){
+  if(activeCategories.length === 0) return data;
+  return data.filter(tool => activeCategories.includes(tool.category));
+
+}
+
+
 
 //  Apply filters
 function applyFilters(){
@@ -129,6 +167,7 @@ function applyFilters(){
 
   filteredTools = searchFilter(filteredTools);
   filteredTools = isFreeFilter(filteredTools);
+  filteredTools = categoryFilter(filteredTools);
 
   showCards(filteredTools);
 }
@@ -138,6 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
   try{
     setupSearch();
     setupIsFreeFilter();
+    setupCategories();
   }
   catch(e){
     console.error(e);
