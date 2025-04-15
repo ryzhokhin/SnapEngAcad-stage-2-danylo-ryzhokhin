@@ -197,6 +197,12 @@ function sortFilter(data){
   }
 }
 
+// Clear filters logic
+function clearAllFilters(){
+  showCards(tools);
+}
+
+
 
 //  Apply filters
 function applyFilters(){
