@@ -216,6 +216,67 @@ function applyFilters(){
   showCards(filteredTools);
 }
 
+
+//Modal for adding
+function setupModal(){
+  document.getElementById("add-tool-btn").addEventListener("click", ()=> {
+    document.getElementById("modal").classList.remove("hidden");
+    document.getElementById("modal-overlay").classList.remove("hidden");
+  });
+  document.getElementById("close-modal").addEventListener("click", ()=> {
+    document.getElementById("modal").classList.add("hidden");
+    document.getElementById("modal-overlay").classList.add("hidden");
+  })
+  document.getElementById("modal-overlay").addEventListener("click", ()=> {
+    document.getElementById("modal").classList.add("hidden");
+    document.getElementById("modal-overlay").classList.add("hidden");
+  })
+
+  addNewToolSetup();
+}
+
+function addNewToolSetup(){
+  document.getElementById("add-tool-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("tool-name").value.trim();
+    const logo = document.getElementById("tool-logo").value.trim();
+    const URL = document.getElementById("tool-url").value.trim();
+    const description = document.getElementById("tool-description").value.trim();
+    const category = document.getElementById("tool-category").value;
+    const isFree = document.getElementById("is-free").checked;
+    let rating = 0.0;
+    try{
+        rating = document.getElementById("tool-rating").value;
+    }
+    catch(err){
+      alert("Please enter float for the rating");
+      return;
+    }
+
+    const newTool = {
+      id: tools.length+1,
+      name: name,
+      category: category,
+      isFree: isFree,
+      rating: rating,
+      description: description,
+      website: URL,
+      logo: logo,
+    }
+
+    tools.push(newTool);
+    applyFilters();
+
+    document.getElementById("modal").classList.add("hidden");
+    document.getElementById("modal-overlay").classList.add("hidden");
+
+    e.target.reset();
+  })
+}
+
+
+
 // Set up event
 document.addEventListener("DOMContentLoaded", () => {
   try{
@@ -223,6 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setupIsFreeFilter();
     setupCategories();
     setupSorting();
+    setupModal();
   }
   catch(e){
     console.error(e);
