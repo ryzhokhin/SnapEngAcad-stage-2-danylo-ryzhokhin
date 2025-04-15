@@ -57,6 +57,7 @@ function showCards(toolsArray) {
     const nextCard = templateCard.cloneNode(true);
     editCardContent(nextCard, tool);
     cardContainer.appendChild(nextCard);
+    setupCardModal(nextCard, tool);
   })
 
 }
@@ -174,7 +175,7 @@ function setupSorting(){
   const sortType = document.getElementById("sort-type");
   if(!sortType) return;
   console.log("New sort type initialized");
-  sortType.addEventListener("change", () =>{applyFilters(); console.log("🥰🥰🥰🥰🥰");});
+  sortType.addEventListener("change", applyFilters);
 }
 
 function sortFilter(data){
@@ -183,9 +184,8 @@ function sortFilter(data){
   switch(value){
     case "rating-top":
       return data.sort(function (a, b) {
-        if((b-a)>0) return -1;
+        return b.rating - a.rating;
       })
-      break;
     case "rating-bottom":
       return data.sort(function (a, b) {
         return a.rating-b.rating;
@@ -198,7 +198,7 @@ function sortFilter(data){
 
     case "name-Z-A":
       return data.sort(function (a, b) {
-        return b.name.localeCompare(b.name);
+        return b.name.localeCompare(a.name);
       })
 
     default:
@@ -208,9 +208,35 @@ function sortFilter(data){
 
 // Clear filters logic
 function clearAllFilters(){
-  showCards(tools);
+  document.getElementById("search-input").value = "";
+  document.querySelectorAll(".segment-btn").forEach(btn => {
+    if(btn.dataset.free !== "all"){
+      btn.classList.remove("active");
+    }else{
+      btn.classList.add("active");
+    }
+  })
+  document.getElementById("sort-type").selectedIndex = 0;
+  activeCategories = [];
+  updateCategoryUI();
+  applyFilters();
 }
 
+// Featured tools logic
+function setupFeatured(){
+  const isFeatured  = document.getElementById("featured-only");
+  if(!isFeatured) return;
+  console.log("new featured only initialized");
+  isFeatured.addEventListener("change", applyFilters);
+}
+
+function featuredFilter(data){
+  const isFeatured = document.getElementById("featured-only").checked;
+  if(isFeatured){
+    return data.filter(tool => tool.rating >=4.5);
+  }
+  return data;
+}
 
 
 //  Apply filters
@@ -221,6 +247,7 @@ function applyFilters(){
   filteredTools = isFreeFilter(filteredTools);
   filteredTools = categoryFilter(filteredTools);
   filteredTools = sortFilter(filteredTools);
+  filteredTools = featuredFilter(filteredTools);
 
   showCards(filteredTools);
 }
@@ -230,14 +257,19 @@ function applyFilters(){
 function setupModal(){
   document.getElementById("add-tool-btn").addEventListener("click", ()=> {
     document.getElementById("modal").classList.remove("hidden");
+    document.getElementById("modal").classList.add("show");
     document.getElementById("modal-overlay").classList.remove("hidden");
   });
   document.getElementById("close-modal").addEventListener("click", ()=> {
     document.getElementById("modal").classList.add("hidden");
+    document.getElementById("modal").classList.remove("show");
+    document.getElementById("modal").classList.add("show");
     document.getElementById("modal-overlay").classList.add("hidden");
   })
   document.getElementById("modal-overlay").addEventListener("click", ()=> {
     document.getElementById("modal").classList.add("hidden");
+    document.getElementById("modal").classList.remove("show");
+    document.getElementById("edit-modal").classList.add("hidden");
     document.getElementById("modal-overlay").classList.add("hidden");
   })
 
@@ -264,7 +296,7 @@ function addNewToolSetup(){
     }
 
     const newTool = {
-      id: tools.length+1,
+      id: crypto.randomUUID(),
       name: name,
       category: category,
       isFree: isFree,
@@ -284,6 +316,78 @@ function addNewToolSetup(){
   })
 }
 
+// Modal for edit
+function setupCardModal(card, tool){
+  card.addEventListener("click", () => {
+    document.getElementById("edit-tool-id").value = tool.id;
+    document.getElementById("edit-tool-name").value = tool.name;
+    document.getElementById("edit-tool-logo").value = tool.logo;
+    document.getElementById("edit-tool-url").value = tool.website;
+    document.getElementById("edit-tool-description").value = tool.description;
+    document.getElementById("edit-tool-category").value = tool.category;
+    document.getElementById("edit-isFree-checkbox").checked = tool.isFree;
+    document.getElementById("edit-tool-rating").value = tool.rating;
+
+    document.getElementById("edit-modal").classList.remove("hidden");
+    document.getElementById("edit-modal").classList.add("show");
+    document.getElementById("modal-overlay").classList.remove("hidden");
+  });
+}
+
+function setupEditModal(){
+  document.getElementById("close-edit-modal").addEventListener("click", ()=> {
+    document.getElementById("edit-modal").classList.add("hidden");
+    document.getElementById("edit-modal").classList.remove("show");
+    document.getElementById("modal-overlay").classList.add("hidden");
+  })
+
+  document.getElementById("edit-tool-form").addEventListener("submit", (e)=> {
+    e.preventDefault();
+    const updatedTool = {
+      id:document.getElementById("edit-tool-id").value,
+      name: document.getElementById("edit-tool-name").value,
+      category: document.getElementById("edit-tool-category").value,
+      isFree: document.getElementById("edit-isFree-checkbox").checked,
+      rating: parseFloat(document.getElementById("edit-tool-rating").value),
+      description: document.getElementById("edit-tool-description").value,
+      website: document.getElementById("edit-tool-url").value,
+      logo: document.getElementById("edit-tool-logo").value,
+    }
+
+    updateToolData(updatedTool);
+    document.getElementById("edit-modal").classList.add("hidden");
+    document.getElementById("edit-modal").classList.remove("show");
+    document.getElementById("modal-overlay").classList.add("hidden");
+    applyFilters();
+    e.target.reset();
+  });
+
+  document.getElementById("delete-tool").addEventListener("click", ()=> {
+    const id = document.getElementById("edit-tool-id").value;
+    toolDelete(id);
+    document.getElementById("edit-modal").classList.add("hidden");
+    document.getElementById("edit-modal").classList.remove("show");
+    document.getElementById("modal-overlay").classList.add("hidden");
+    applyFilters();
+  });
+
+}
+
+function toolDelete(id){
+  const tool = tools.find(tool => tool.id === id);
+  tools.splice(tools.indexOf(tool), 1);
+}
+
+function updateToolData(updatedTool){
+  // console.log(updatedTool.id, typeof(updatedTool.id));
+  tools = tools.map(tool=> {
+    if(tool.id === updatedTool.id){
+      return updatedTool;
+    }
+    return tool;
+  });
+}
+
 
 
 // Set up event
@@ -294,6 +398,9 @@ document.addEventListener("DOMContentLoaded", () => {
     setupCategories();
     setupSorting();
     setupModal();
+    setupFeatured();
+    // setupCardsModal();
+    setupEditModal();
   }
   catch(e){
     console.error(e);

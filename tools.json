@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "f3d2a3c7-e8b9-41d7-ae42-8e24cc2d4a1b",
     "name": "ChatGPT",
     "category": "Text Generation",
     "isFree": true,
@@ -10,7 +10,7 @@
     "logo": "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"
   },
   {
-    "id": 2,
+    "id": "7d09c150-9c3e-429f-b2fd-6de2c14a785e",
     "name": "Midjourney",
     "category": "Image Generation",
     "isFree": false,
@@ -20,7 +20,7 @@
     "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Midjourney_Emblem.png"
   },
   {
-    "id": 3,
+    "id": "9fa0eb22-3e8a-4ff1-8e3e-89d79ae5a6c0",
     "name": "GitHub Copilot",
     "category": "Coding Assistants",
     "isFree": false,
@@ -30,7 +30,7 @@
     "logo": "https://upload.wikimedia.org/wikipedia/commons/3/30/42_e_43.png"
   },
   {
-    "id": 4,
+    "id": "b1a7d9cd-83a0-4a36-a857-f8c7e0f6852e",
     "name": "Runway",
     "category": "Video Tools",
     "isFree": true,
@@ -40,7 +40,7 @@
     "logo": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Runway_Logo.png"
   },
   {
-    "id": 5,
+    "id": "05c8a0eb-93bc-468e-b5d0-41657f55c8a3",
     "name": "ElevenLabs",
     "category": "Voice & Audio",
     "isFree": true,
@@ -50,7 +50,7 @@
     "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e2/ElevenLabs_logo_%282022-2024%29.png"
   },
   {
-    "id": 6,
+    "id": "3dbf51c4-ef29-4b29-b582-2b36e93f478a",
     "name": "Notion AI",
     "category": "Productivity / Automation",
     "isFree": true,
