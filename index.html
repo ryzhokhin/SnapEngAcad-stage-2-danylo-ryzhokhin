@@ -3,6 +3,7 @@
   <head>
     <title>AI tools Catalog</title>
     <meta name="description" content="A Catalog of Shows Set in Los Angeles" />
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <script type="text/javascript" src="scripts.js"></script>
@@ -12,21 +13,26 @@
 
 
   <header class="main-header">
-    <h1 class="hero-title">Explore more with<br/> <b>AI tools catalog</b></h1>
-
+    <h1 class="hero-title">Explore more with<br/> <b>AI tools catalog <span class="emoji">🤖</span></b></h1>
     <div class="neural-bg">
       <div class="circle one"></div>
       <div class="circle two"></div>
       <div class="circle three"></div>
     </div>
-
   </header>
+
+  <div class="search">
+    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+    </svg>
+    <input type="text" id="search-input" placeholder="Search AI tools..." />
+  </div>
 
   <hr />
     <header class="main-header">
       <h1 class="title">AI Tools Catalog</h1>
       <div class="search">
-        <input type="text" id="search-input" placeholder="Search tools... "/>
+        <input type="text" placeholder="Search tools... "/>
       </div>
       <div class="filter-isFree">
         <select id="filter-free">
