@@ -105,15 +105,24 @@ function searchFilter(data){
 
 //  Is Free filter
 function setupIsFreeFilter(){
-  const isFreeFilter = document.getElementById("filter-free");
-  if(!isFreeFilter) return;
+  const isFreeFilters = document.querySelectorAll("#isFree-filter .segment-btn");
+  if(!isFreeFilters) return;
   console.log("new isFreeFilter initialized");
-  isFreeFilter.addEventListener("change", applyFilters);
+  isFreeFilters.forEach( option => {
+    option.addEventListener("click", () => {
+      isFreeFilters.forEach(tmp => tmp.classList.remove("active"));
+      option.classList.add("active");
+      applyFilters();
+    });
+
+  })
+  // isFreeFilter.addEventListener("change", applyFilters);
+
 }
 
 function isFreeFilter(data){
-  const isFreeFilter = document.getElementById("filter-free");
-  const value = isFreeFilter.value;
+  const isFreeFilter = document.querySelector("#isFree-filter .segment-btn.active");
+  const value = isFreeFilter.dataset.free;
   if(value ==="free"){
     return data.filter(tool => tool.isFree);
   }else if(value==="not-free"){
@@ -165,7 +174,7 @@ function setupSorting(){
   const sortType = document.getElementById("sort-type");
   if(!sortType) return;
   console.log("New sort type initialized");
-  sortType.addEventListener("change", applyFilters)
+  sortType.addEventListener("change", () =>{applyFilters(); console.log("🥰🥰🥰🥰🥰");});
 }
 
 function sortFilter(data){

@@ -118,11 +118,12 @@ button {
 
 .main-header {
   position: relative;
-  padding: 100px 20px 60px;
+  padding: 10% 20px 10%;
   text-align: center;
   background: linear-gradient(to bottom right, #fdfdfd, #f5f8fb);
   overflow: hidden;
 }
+
 
 .hero-title {
   position: relative;
@@ -192,7 +193,30 @@ button {
 }
 
 
+
 /*Filters*/
+
+.filters-wrapper {
+  padding: 20px;
+  background: linear-gradient(135deg, #e5e0ff, #e6f0ff, #e5e0ff);
+  background-size: 400% 400%;
+  animation: gradientFlow 10s ease infinite;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.filters-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    flex-wrap: wrap;
+    margin-top: 2vh;
+}
 
 /*Search*/
 .search {
@@ -223,3 +247,95 @@ button {
   height: 1.4rem;
   stroke: #666;
 }
+
+
+/*is free filter*/
+
+.toggle-segment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-radius: 50px;
+  padding: 0.1em 0.3em;
+  gap: 0.2em;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  margin: 2vh;
+  width: fit-content;
+    /*height: 10vh;*/
+}
+
+.segment-btn {
+  border: none;
+  background: transparent;
+  padding: 0.4em 1em;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  color: #333;
+  transition: all 0.2s ease-in-out;
+}
+
+.segment-btn.active {
+  background: #eef3ff;
+  color: #3e4de2;
+  font-weight: 600;
+  position: relative;
+}
+
+
+/* Sorting */
+
+.sort-type-select{
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: white;
+  padding: 0.4em 1em;
+  font-size: 0.9rem;
+  font-family: 'Inter', sans-serif;
+  border-radius: 30px;
+  border: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  appearance: none;
+  outline: none;
+  color: #333;
+  cursor: pointer;
+  width: 180px;
+}
+
+.filter-sorting {
+    position: relative;
+    display: flex;
+    align-items: center;
+    /*height: 10vh;*/
+}
+
+.filter-sorting svg {
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.1rem;
+    height: 1.1rem;
+    pointer-events: none;
+    stroke: #3e4de2;
+}
+
+
+#sort-type {
+    padding: 0.6em 3em 0.6em 1em;
+    font-size: 1rem;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #f7f9fd, #f0f7ff);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    border: none;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    appearance: none;
+    cursor: pointer;
+    height: 100%;
+    width: 200px;
+}
+
