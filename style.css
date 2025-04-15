@@ -142,29 +142,35 @@ button {
 .circle {
   position: absolute;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(140,82,255,0.25), transparent);
+  background: radial-gradient(
+          circle,
+          rgba(140, 82, 255, 0.2) 0%,
+          rgba(140, 82, 255, 0.15) 40%,
+          rgba(140, 82, 255, 0.07) 70%,
+          rgba(140, 82, 255, 0) 100%
+  );
   animation: float 10s infinite ease-in-out;
 }
 
 .circle.one {
-  width: 200px;
-  height: 200px;
-  top: 50px;
-  left: 10%;
+  width: 20vw;
+  height: 20vw;
+  top: 5vh;
+  left: 10vw;
 }
 
 .circle.two {
-  width: 300px;
-  height: 300px;
-  top: 120px;
-  right: 15%;
+  width: 30vw;
+  height: 30vw;
+  top: 10vh;
+  right: 15vw;
 }
 
 .circle.three {
-  width: 150px;
-  height: 150px;
-  top: 80px;
-  left: 40%;
+  width: 15vw;
+  height: 15vw;
+  top: 8vh;
+  left: 40vw;
 }
 
 @keyframes float {
