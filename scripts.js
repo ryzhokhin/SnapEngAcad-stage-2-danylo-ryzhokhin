@@ -26,6 +26,7 @@
 let tools = [];
 let activeCategories = [];
 
+// function for getting data from JSON into the Array of Objects
 document.addEventListener("DOMContentLoaded", () => {
   fetch('./tools.json')
       .then(response => {
@@ -62,6 +63,7 @@ function showCards(toolsArray) {
 
 }
 
+//This function edits card content inside the card and creates HTML structure for it
 function editCardContent(card, tool) {
   card.style.display = "block";
 
@@ -83,12 +85,10 @@ function editCardContent(card, tool) {
   `
   const starContainer = card.querySelector(".star-container");
   starContainer.innerHTML = generateStars(tool.rating);
-  // You can use console.log to help you debug!
-  // View the output by right clicking on your website,
-  // select "Inspect", then click on the "Console" tab
   console.log("new card:", tool.name, "- html: ", card);
 }
 
+// This function creates HTML object of stars based on the rating
 function generateStars(rating) {
   const fullStar = '★';
   const emptyStar = '☆'
@@ -113,6 +113,8 @@ function generateStars(rating) {
 }
 
 // Search Logic
+
+//This function sets up event listener for search elements
 function setupSearch(){
   const searchInput = document.getElementById("search-input");
   if(!searchInput) return;
@@ -120,6 +122,7 @@ function setupSearch(){
   searchInput.addEventListener("input", applyFilters);
 }
 
+// This function filters data received based on the search value
 function searchFilter(data){
   const searchInput = document.getElementById("search-input");
   const query = searchInput.value;
@@ -129,6 +132,8 @@ function searchFilter(data){
 
 
 //  Is Free filter
+
+// This function sets up event listener for isFree elements
 function setupIsFreeFilter(){
   const isFreeFilters = document.querySelectorAll("#isFree-filter .segment-btn");
   if(!isFreeFilters) return;
@@ -145,6 +150,7 @@ function setupIsFreeFilter(){
 
 }
 
+// This function filters data based on the isFreefilter value ALl/free/paid
 function isFreeFilter(data){
   const isFreeFilter = document.querySelector("#isFree-filter .segment-btn.active");
   const value = isFreeFilter.dataset.free;
@@ -158,6 +164,8 @@ function isFreeFilter(data){
 
 
 //  Category Filter Logic
+
+// This function sets up event listener for categories elements
 function setupCategories(){
   const tags = document.querySelectorAll("#category-tags .tag");
   tags.forEach(tag => {
@@ -166,7 +174,7 @@ function setupCategories(){
   })
 }
 
-
+// This function toggles a category filter on/off in the activeCategories array.
 function toggleCategory(category){
   const index = activeCategories.indexOf(category);
   if (index > -1) {
@@ -179,6 +187,7 @@ function toggleCategory(category){
   applyFilters();
 }
 
+// This function updates the UI based on which category tags are active
 function updateCategoryUI(){
   const tags = document.querySelectorAll("#category-tags .tag");
   tags.forEach(tag => {
@@ -187,6 +196,7 @@ function updateCategoryUI(){
   })
 }
 
+// This function filters the dataset based on selected category tags.
 function categoryFilter(data){
   if(activeCategories.length === 0) return data;
   return data.filter(tool => activeCategories.includes(tool.category));
@@ -195,6 +205,8 @@ function categoryFilter(data){
 
 
 // Sorting Logic
+
+// This function sets up event listener for sorting elements
 function setupSorting(){
   const sortType = document.getElementById("sort-type");
   if(!sortType) return;
@@ -202,6 +214,8 @@ function setupSorting(){
   sortType.addEventListener("change", applyFilters);
 }
 
+// This function sorts the dataset based on the selected option from the sort dropdown.
+// Sorts by rating (high to low, low to high) and name (A-Z, Z-A).
 function sortFilter(data){
   const sortType = document.getElementById("sort-type");
   const value = sortType.value;
@@ -231,6 +245,8 @@ function sortFilter(data){
 }
 
 // Clear filters logic
+
+// This function resets all filter UI elements and re-applies the default tool list.
 function clearAllFilters(){
   document.getElementById("search-input").value = "";
   document.querySelectorAll(".segment-btn").forEach(btn => {
@@ -252,6 +268,8 @@ function clearAllFilters(){
 }
 
 // Featured tools logic
+
+// This function sets up event listener for "Featured only" elements
 function setupFeatured(){
   const isFeatured  = document.getElementById("featured-only");
   if(!isFeatured) return;
@@ -259,6 +277,8 @@ function setupFeatured(){
   isFeatured.addEventListener("change", applyFilters);
 }
 
+// This function filters tools based on their rating if the "Featured Only" option is enabled.
+// Returns tools with a rating of 4.2 or higher.
 function featuredFilter(data){
   const isFeatured = document.getElementById("featured-only").checked;
   if(isFeatured){
@@ -269,9 +289,10 @@ function featuredFilter(data){
 
 
 //  Apply filters
+
+// This function runs all filters and updates the displayed tool cards
 function applyFilters(){
   let filteredTools = [...tools];
-
   filteredTools = searchFilter(filteredTools);
   filteredTools = isFreeFilter(filteredTools);
   filteredTools = categoryFilter(filteredTools);
@@ -283,6 +304,9 @@ function applyFilters(){
 
 
 //Modal for adding
+
+
+// This function sets up event listener for Modal elements
 function setupModal(){
   document.getElementById("add-tool-btn").addEventListener("click", ()=> {
     document.getElementById("modal").classList.remove("hidden");
@@ -305,6 +329,7 @@ function setupModal(){
   addNewToolSetup();
 }
 
+// This function handles form submission to add a new tool and update the display
 function addNewToolSetup(){
   document.getElementById("add-tool-form").addEventListener("submit", (e) => {
     e.preventDefault();
@@ -346,6 +371,8 @@ function addNewToolSetup(){
 }
 
 // Modal for edit
+
+// This function sets up event listener for Edit Card elements
 function setupCardModal(card, tool){
   card.addEventListener("click", () => {
     document.getElementById("edit-tool-id").value = tool.id;
@@ -363,6 +390,7 @@ function setupCardModal(card, tool){
   });
 }
 
+// This function sets up event listener for Edit Modal elements
 function setupEditModal(){
   document.getElementById("close-edit-modal").addEventListener("click", ()=> {
     document.getElementById("edit-modal").classList.add("hidden");
@@ -402,11 +430,13 @@ function setupEditModal(){
 
 }
 
+//This function deletes tool from tools array based on the passed ID
 function toolDelete(id){
   const tool = tools.find(tool => tool.id === id);
   tools.splice(tools.indexOf(tool), 1);
 }
 
+// This function updates tool in the tools array
 function updateToolData(updatedTool){
   // console.log(updatedTool.id, typeof(updatedTool.id));
   tools = tools.map(tool=> {
@@ -419,7 +449,7 @@ function updateToolData(updatedTool){
 
 
 
-// Set up event
+// This function initialize all UI event listeners after DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
   try{
     setupSearch();
@@ -436,18 +466,3 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 })
 
-
-// This calls the addCards() function when the page is first loaded
-// document.addEventListener("DOMContentLoaded", showCards);
-
-function quoteAlert() {
-  console.log("Button Clicked!");
-  // alert(
-  //   "I guess I can kiss heaven goodbye, because it got to be a sin to look this good!"
-  // );
-}
-
-function removeLastCard() {
-  // titles.pop(); // Remove last item in titles array
-  // showCards(); // Call showCards again to refresh
-}
