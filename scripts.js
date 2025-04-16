@@ -75,18 +75,42 @@ function editCardContent(card, tool) {
   const cardInfo = card.querySelector("ul");
   cardInfo.innerHTML = `
     <li>Category: ${tool.category}</li>
-    <li>Rating: ${tool.rating}</li>
     <li>Free: ${tool.isFree ? "✅ Yes" : "❌ No"}</li>
     <li>Description: ${tool.description}</li>
+    <li>Rating: ${tool.rating}</li>
+    <li class="star-container"></li>
     <li><a href="${tool.website}" target="_blank">Visit Website</a></li>  
   `
-
+  const starContainer = card.querySelector(".star-container");
+  starContainer.innerHTML = generateStars(tool.rating);
   // You can use console.log to help you debug!
   // View the output by right clicking on your website,
   // select "Inspect", then click on the "Console" tab
   console.log("new card:", tool.name, "- html: ", card);
 }
 
+function generateStars(rating) {
+  const fullStar = '★';
+  const emptyStar = '☆'
+  let stars = "";
+
+  const tmp = rating % 1;
+  if(tmp > 0.7){
+     rating = Math.ceil(rating);
+  }else{
+    rating = Math.floor(rating);
+  }
+
+  for(let i = 1; i <= 5; i++) {
+    if(rating >= i){
+      stars += fullStar;
+    }else{
+      stars += emptyStar;
+    }
+  }
+
+  return `<span class="stars">${stars}</span>`;
+}
 
 // Search Logic
 function setupSearch(){
@@ -311,7 +335,7 @@ function addNewToolSetup(){
       logo: logo,
     }
 
-    tools.push(newTool);
+    tools.unshift(newTool);
     applyFilters();
 
     document.getElementById("modal").classList.add("hidden");

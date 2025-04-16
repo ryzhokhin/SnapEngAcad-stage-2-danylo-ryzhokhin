@@ -13,11 +13,6 @@ body {
   -webkit-text-fill-color: initial !important;
 }
 
-/*.main-header {*/
-/*  background-color: rgba(0, 0, 0, 0.3);*/
-/*  padding-bottom: 10px;*/
-/*}*/
-
 .title {
   text-align: center;
   margin: 0;
@@ -95,27 +90,6 @@ body {
   max-width: 90%;
   object-fit: contain;
 }
-
-/*.footer {*/
-/*  display: flex;*/
-/*  justify-content: center;*/
-/*  background-color: rgba(0, 0, 0, 0.3);*/
-/*  padding: 10px;*/
-/*}*/
-
-/*button {*/
-/*  text-align: center;*/
-/*  background-color: #666;*/
-/*  border: none;*/
-/*  padding-left: 10px;*/
-/*  padding-right: 10px;*/
-/*  height: 40px;*/
-/*  border-radius: 10px;*/
-/*  color: white;*/
-/*  font-size: 22px;*/
-/*  cursor: pointer;*/
-/*  margin: 5px;*/
-/*}*/
 
 .footer{
   margin-top: 6vh;
@@ -248,7 +222,6 @@ body {
   background: #eee;
 }
 
-
 /* Edit Modal Styling */
 .modal h2 {
   font-size: 2em;
@@ -373,11 +346,7 @@ body {
   color: #333;
 }
 
-
-/*frontend my classes*/
-
 /*Header classes*/
-
 .main-header{
   position: relative;
   padding: 10% 20px 10%;
@@ -385,10 +354,6 @@ body {
   background: linear-gradient(to bottom right, #fdfdfd, #f5f8fb);
   overflow: hidden;
 }
-
-/*---------------------*/
-
-/*---------------------*/
 
 .hero-title{
   position: relative;
@@ -496,10 +461,7 @@ body {
   }
 }
 
-
-
 /*Filters*/
-
 .filters-wrapper {
   padding: 20px;
   background: linear-gradient(135deg, #e5e0ff, #e6f0ff, #e5e0ff);
@@ -626,7 +588,6 @@ body {
   transform: translateY(-1px);
 }
 
-
 /*is free filter*/
 
 .toggle-segment {
@@ -662,9 +623,7 @@ body {
   position: relative;
 }
 
-
 /* Sorting */
-
 .sort-type-select{
   display: flex;
   align-items: center;
@@ -687,7 +646,6 @@ body {
     position: relative;
     display: flex;
     align-items: center;
-    /*height: 10vh;*/
 }
 
 .filter-sorting svg {
@@ -795,8 +753,6 @@ body {
   box-shadow: 0 8px 22px rgba(62, 77, 226, 0.4);
 }
 
-
-
 /*Category filter*/
 .category-section {
    text-align: center;
@@ -849,7 +805,6 @@ body {
   transition: all 0.4s ease-in-out;
 }
 
-
 /*in between sections #2*/
 .cards-info {
   text-align: center;
@@ -862,8 +817,8 @@ body {
   opacity: 0.85;
 }
 
-
-
-
-
-
+.stars{
+  color: #f4c430;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
