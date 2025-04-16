@@ -12,12 +12,14 @@
 <body>
 
 
-<header class="main-header">
+<header class="main-header ">
     <h1 class="hero-title">Explore more with<br/> <b>AI tools catalog <span class="emoji">🤖</span></b></h1>
     <div class="neural-bg">
         <div class="circle one"></div>
         <div class="circle two"></div>
         <div class="circle three"></div>
+        <div class="circle four"></div>
+        <div class="circle five"></div>
     </div>
 </header>
 
@@ -102,104 +104,26 @@
     </div>
 </div>
 
-<hr/>
-<header class="main-header">
-    <h1 class="title">AI Tools Catalog</h1>
-    <div class="search">
-        <input type="text" placeholder="Search tools... "/>
+<footer class="filters-wrapper footer">
+    <div>
+        <p>Snap Engineering Academy Stage 2 Project by <strong>Danylo Ryzhokhin 🌚</strong></p>
+        <p>&copy 2025 All rights reserved.</p>
     </div>
-    <div class="filter-isFree">
-        <select id="filter-free">
-            <option value="all">All</option>
-            <option value="free">Free</option>
-            <option value="not-free">Not Free</option>
-        </select>
-    </div>
-    <div class="filter-category" id="category-tags-old-version">
-        <button class="tag" data-category="Text Generation">Text Generation</button>
-        <button class="tag" data-category="Image Generation">Image Generation</button>
-        <button class="tag" data-category="Coding Assistants">Coding Assistants</button>
-        <button class="tag" data-category="Video Tools">Video Tools</button>
-        <button class="tag" data-category="Voice & Audio">Voice & Audio</button>
-        <button class="tag" data-category="Productivity / Automation">Productivity / Automation</button>
-    </div>
-    <div class="filter-sorting">
-        <select id="sort-type-old-version"><!--id="sort-type"-->
-            <option value="default">Sort by...</option>
-            <option value="rating-top">Rating from Best to Worst</option>
-            <option value="rating-bottom">Rating from Worst to Best</option>
-            <option value="naming-A-Z">Naming A-Z</option>
-            <option value="naming-Z-A">Naming Z-A</option>
-        </select>
-    </div>
-    <div class="filter-clear" id="filter-clear">
-        <button type="button" onclick="clearAllFilters()">Clear all filters</button>
-    </div>
-</header>
-<div id="card-container-old-version"></div>
-<div class="card" style="display: none">
-    <div class="card-content">
-        <h2>TV Show Title</h2>
-        <img src="" alt="AI tool Logo"/>
-        <ul>
+</footer>
 
-        </ul>
-    </div>
-</div>
-<div class="footer">
-    <button onclick="quoteAlert();">Get A Quote!</button>
-    <button onclick="removeLastCard();">Remove A Card!</button>
+<!--Modals-->
+<div id="modal-overlay" class="overlay hidden"></div>
 
+<div id="modal" class="modal hidden">
+    <form id="add-tool-form">
+        <h2 class="modal-title">Add New Tool</h2>
 
-    <button id="add-tool-btn-old-version">➕ Add New Tool</button>
-
-    <div id="modal-overlay" class="overlay hidden"></div>
-
-    <div id="modal" class="modal hidden">
-        <form id="add-tool-form">
-            <h2 class="modal-title">Add New Tool</h2>
-
-            <div class="adding-form">
-                <input type="text" id="tool-name" placeholder="Tool name" required/>
-                <input type="text" id="tool-logo" placeholder="Logo URL" required/>
-                <input type="text" id="tool-url" placeholder="Website URL"/>
-                <textarea id="tool-description" placeholder="Description"></textarea>
-                <select id="tool-category">
-                    <option value="">Select category</option>
-                    <option value="Text Generation">Text Generation</option>
-                    <option value="Image Generation">Image Generation</option>
-                    <option value="Video Tools">Video Tools</option>
-                    <option value="Voice & Audio">Voice & Audio</option>
-                    <option value="Chatbots">Chatbots</option>
-                    <option value="Coding Assistants">Coding Assistants</option>
-                    <option value="Productivity / Automation">Productivity / Automation</option>
-                    <option value="Presentation & Slides">Presentation & Slides</option>
-                    <option value="Design & UI/UX">Design & UI/UX</option>
-                    <option value="AI Detection">AI Detection</option>
-
-                </select>
-                <label class="isFree-checkbox">
-                    <input type="checkbox" id="is-free"/>
-                    Free Tool
-                </label>
-                <input type="number" id="tool-rating" min="0" max="5" step="0.1" placeholder="Rating"/>
-            </div>
-            <div class="modal-btns">
-                <button type="submit" class="submit">Add Tool</button>
-                <button type="button" id="close-modal" class="cancel">Cancel</button>
-            </div>
-        </form>
-    </div>
-
-    <div id="edit-modal" class="modal hidden">
-        <form id="edit-tool-form">
-            <h2>Edit Tool 👋</h2>
-            <input type="hidden" id="edit-tool-id" />
-            <input type="text" id="edit-tool-name" placeholder="Tool name" required />
-            <input type="text" id="edit-tool-logo" placeholder="Logo URL" required />
-            <input type="text" id="edit-tool-url" placeholder="Website URL" />
-            <textarea id="edit-tool-description" placeholder="Description"></textarea>
-            <select id="edit-tool-category">
+        <div class="adding-form">
+            <input type="text" id="tool-name" placeholder="Tool name" required/>
+            <input type="text" id="tool-logo" placeholder="Logo URL" required/>
+            <input type="text" id="tool-url" placeholder="Website URL"/>
+            <textarea id="tool-description" placeholder="Description"></textarea>
+            <select id="tool-category">
                 <option value="">Select category</option>
                 <option value="Text Generation">Text Generation</option>
                 <option value="Image Generation">Image Generation</option>
@@ -211,21 +135,54 @@
                 <option value="Presentation & Slides">Presentation & Slides</option>
                 <option value="Design & UI/UX">Design & UI/UX</option>
                 <option value="AI Detection">AI Detection</option>
+
             </select>
-            <label>
-                <input type="checkbox" id="edit-isFree-checkbox" />
+            <label class="isFree-checkbox">
+                <input type="checkbox" id="is-free"/>
                 Free Tool
             </label>
-            <input type="number" id="edit-tool-rating" min="0" max="5" step="0.1" placeholder="Rating" />
-
-            <div class="edit-modal-btns">
-                <button type="submit" id="update-tool">📝 Update Tool</button>
-                <button type="button" id="delete-tool">🗑️ Delete Tool</button>
-                <button type="button" id="close-edit-modal">❌ Cancel</button>
-            </div>
-        </form>
-    </div>
+            <input type="number" id="tool-rating" min="0" max="5" step="0.1" placeholder="Rating"/>
+        </div>
+        <div class="modal-btns">
+            <button type="submit" class="submit">Add Tool</button>
+            <button type="button" id="close-modal" class="cancel">Cancel</button>
+        </div>
+    </form>
 </div>
 
+<div id="edit-modal" class="modal hidden">
+    <form id="edit-tool-form">
+        <h2>Edit Tool 👋</h2>
+        <input type="hidden" id="edit-tool-id"/>
+        <input type="text" id="edit-tool-name" placeholder="Tool name" required/>
+        <input type="text" id="edit-tool-logo" placeholder="Logo URL" required/>
+        <input type="text" id="edit-tool-url" placeholder="Website URL"/>
+        <textarea id="edit-tool-description" placeholder="Description"></textarea>
+        <select id="edit-tool-category">
+            <option value="">Select category</option>
+            <option value="Text Generation">Text Generation</option>
+            <option value="Image Generation">Image Generation</option>
+            <option value="Video Tools">Video Tools</option>
+            <option value="Voice & Audio">Voice & Audio</option>
+            <option value="Chatbots">Chatbots</option>
+            <option value="Coding Assistants">Coding Assistants</option>
+            <option value="Productivity / Automation">Productivity / Automation</option>
+            <option value="Presentation & Slides">Presentation & Slides</option>
+            <option value="Design & UI/UX">Design & UI/UX</option>
+            <option value="AI Detection">AI Detection</option>
+        </select>
+        <label>
+            <input type="checkbox" id="edit-isFree-checkbox"/>
+            Free Tool
+        </label>
+        <input type="number" id="edit-tool-rating" min="0" max="5" step="0.1" placeholder="Rating"/>
+
+        <div class="edit-modal-btns">
+            <button type="submit" id="update-tool">📝 Update Tool</button>
+            <button type="button" id="delete-tool">🗑️ Delete Tool</button>
+            <button type="button" id="close-edit-modal">❌ Cancel</button>
+        </div>
+    </form>
+</div>
 </body>
 </html>

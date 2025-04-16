@@ -196,7 +196,7 @@ function sortFilter(data){
         return a.name.localeCompare(b.name);
       })
 
-    case "name-Z-A":
+    case "naming-Z-A":
       return data.sort(function (a, b) {
         return b.name.localeCompare(a.name);
       })
@@ -217,6 +217,11 @@ function clearAllFilters(){
     }
   })
   document.getElementById("sort-type").selectedIndex = 0;
+
+  const featuredCheckBox = document.getElementById("featured-only");
+  featuredCheckBox.removeEventListener("change", applyFilters);
+  featuredCheckBox.checked = false;
+  featuredCheckBox.addEventListener("change", applyFilters);
   activeCategories = [];
   updateCategoryUI();
   applyFilters();
@@ -233,7 +238,7 @@ function setupFeatured(){
 function featuredFilter(data){
   const isFeatured = document.getElementById("featured-only").checked;
   if(isFeatured){
-    return data.filter(tool => tool.rating >=4.5);
+    return data.filter(tool => tool.rating >=4.2);
   }
   return data;
 }

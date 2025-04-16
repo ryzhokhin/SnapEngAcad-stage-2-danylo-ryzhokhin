@@ -40,16 +40,6 @@
     "logo": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Runway_Logo.png"
   },
   {
-    "id": "05c8a0eb-93bc-468e-b5d0-41657f55c8a3",
-    "name": "ElevenLabs",
-    "category": "Voice & Audio",
-    "isFree": true,
-    "rating": 4.4,
-    "description": "AI voice synthesis and cloning tool.",
-    "website": "https://www.elevenlabs.io/",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e2/ElevenLabs_logo_%282022-2024%29.png"
-  },
-  {
     "id": "3dbf51c4-ef29-4b29-b582-2b36e93f478a",
     "name": "Notion AI",
     "category": "Productivity / Automation",
@@ -58,5 +48,245 @@
     "description": "AI assistant built into Notion to help with writing and organizing.",
     "website": "https://www.notion.so/product/ai",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg"
+  },
+  {
+    "id": "58b51925-5dce-4b65-ade7-08c1824baac7",
+    "name": "Jasper",
+    "logo": "https://logovectorseek.com/wp-content/uploads/2023/06/jasper-ai-inc-logo-vector.png",
+    "website": "https://www.jasper.com",
+    "description": "Jasper is an AI-powered tool designed to assist with jasper-related tasks.",
+    "category": "Text Generation",
+    "isFree": true,
+    "rating": 5.0
+  },
+  {
+    "id": "9040c52b-e310-4cd8-ab64-ef9abc6b361c",
+    "name": "Copy AI",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT14c1RIu0V-Xhj9vCFlpjA0a0Go3Q0Pxkwhw&s",
+    "website": "https://www.copyai.com",
+    "description": "Copy AI is an AI-powered tool designed to assist with copy-related tasks.",
+    "category": "Text Generation",
+    "isFree": false,
+    "rating": 2.6
+  },
+  {
+    "id": "2e71db34-bc82-42f0-9986-bd32eed307fa",
+    "name": "Bing Create",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Bing_Fluent_Logo.svg",
+    "website": "https://www.bingcreate.com",
+    "description": "Bing Create is an AI-powered tool designed to assist with bing-related tasks.",
+    "category": "Image Generation",
+    "isFree": false,
+    "rating": 2.3
+  },
+  {
+    "id": "b129c855-9a3f-48d9-ae8b-525f5966f309",
+    "name": "DALL\u00b7E",
+    "logo": "https://10web.io/wp-content/uploads/2024/07/DALL_E_3.png",
+    "website": "https://www.dall\u00b7e.com",
+    "description": "DALL\u00b7E is an AI-powered tool designed to assist with dall\u00b7e-related tasks.",
+    "category": "Image Generation",
+    "isFree": true,
+    "rating": 4.9
+  },
+  {
+    "id": "8e33e70c-1ba8-4186-8c13-95867d92dc7a",
+    "name": "HeyGen",
+    "logo": "https://img.icons8.com/fluent/512/heygen.png",
+    "website": "https://www.heygen.com",
+    "description": "HeyGen is an AI-powered tool designed to assist with heygen-related tasks.",
+    "category": "Video Tools",
+    "isFree": false,
+    "rating": 4.3
+  },
+  {
+    "id": "6f9aa23b-885b-4a8c-8b43-c8710972cde7",
+    "name": "Synthesia",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPgbLPt1BTeNME0hG2hG9D5cSkwJ0YcfE7tg&s",
+    "website": "https://www.synthesia.com",
+    "description": "Synthesia is an AI-powered tool designed to assist with synthesia-related tasks.",
+    "category": "Video Tools",
+    "isFree": true,
+    "rating": 4.3
+  },
+  {
+    "id": "9bd01745-74ce-4b19-a7a2-c52e693e9163",
+    "name": "Pictory",
+    "logo": "https://logo.clearbit.com/pictory.com",
+    "website": "https://www.pictory.com",
+    "description": "Pictory is an AI-powered tool designed to assist with pictory-related tasks.",
+    "category": "Video Tools",
+    "isFree": false,
+    "rating": 4.6
+  },
+  {
+    "id": "1eaad95d-b809-4d46-95f4-a53b07e4cbd9",
+    "name": "Suno AI",
+    "logo": "https://brandlogo.org/wp-content/uploads/2024/07/Suno-AI-Logo.png.webp",
+    "website": "https://www.sunoai.com",
+    "description": "Suno AI is an AI-powered tool designed to assist with suno-related tasks.",
+    "category": "Voice & Audio",
+    "isFree": false,
+    "rating": 4.8
+  },
+  {
+    "id": "0a1158a0-0f78-4622-ab82-0f8b308c1478",
+    "name": "Speechify",
+    "logo": "https://logo.clearbit.com/speechify.com",
+    "website": "https://www.speechify.com",
+    "description": "Speechify is an AI-powered tool designed to assist with speechify-related tasks.",
+    "category": "Voice & Audio",
+    "isFree": false,
+    "rating": 3.9
+  },
+  {
+    "id": "7289869a-33cc-495a-9ea3-7c10c9f1f549",
+    "name": "Poe",
+    "logo": "https://logo.clearbit.com/poe.com",
+    "website": "https://www.poe.com",
+    "description": "Poe is an AI-powered tool designed to assist with poe-related tasks.",
+    "category": "Chatbots",
+    "isFree": false,
+    "rating": 2.7
+  },
+  {
+    "id": "cc67570b-9ed8-4917-9bad-b5cfffd922eb",
+    "name": "Claude",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Claude_AI_logo.svg/690px-Claude_AI_logo.svg.png",
+    "website": "https://www.claude.com",
+    "description": "Claude is an AI-powered tool designed to assist with claude-related tasks.",
+    "category": "Chatbots",
+    "isFree": false,
+    "rating": 3.0
+  },
+  {
+    "id": "00c2cbbb-ce73-4126-a9a5-48a4932822e5",
+    "name": "HuggingChat",
+    "logo": "https://huggingface.co/chat/huggingchat/thumbnail.png",
+    "website": "https://www.huggingchat.com",
+    "description": "HuggingChat is an AI-powered tool designed to assist with huggingchat-related tasks.",
+    "category": "Chatbots",
+    "isFree": false,
+    "rating": 4.6
+  },
+  {
+    "id": "584614ab-f9c9-41a9-a563-44bfa17cd8f4",
+    "name": "Codeium",
+    "logo": "https://logo.clearbit.com/codeium.com",
+    "website": "https://www.codeium.com",
+    "description": "Codeium is an AI-powered tool designed to assist with codeium-related tasks.",
+    "category": "Coding Assistants",
+    "isFree": false,
+    "rating": 3.3
+  },
+  {
+    "id": "04cc1c93-3b38-459e-8d3d-878f9e86d891",
+    "name": "Replit Ghostwriter",
+    "logo": "https://cdn.sanity.io/images/bj34pdbp/migration/7d06c37d899d8ba6419b2a9484dfe44586e70081-794x872.png",
+    "website": "https://www.replitghostwriter.com",
+    "description": "Replit Ghostwriter is an AI-powered tool designed to assist with replit-related tasks.",
+    "category": "Coding Assistants",
+    "isFree": false,
+    "rating": 4.5
+  },
+  {
+    "id": "cf51be6e-67d2-49a5-bdf6-803b4992a596",
+    "name": "ClickUp",
+    "logo": "https://logo.clearbit.com/clickup.com",
+    "website": "https://www.clickup.com",
+    "description": "ClickUp is an AI-powered tool designed to assist with clickup-related tasks.",
+    "category": "Productivity / Automation",
+    "isFree": true,
+    "rating": 3.9
+  },
+  {
+    "id": "f388a286-259a-4e52-821c-7bc6d23051c5",
+    "name": "Reclaim",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiO_rcdZHDSbcbyaXIZzzH2IaeZpYEl1OuTA&s",
+    "website": "https://www.reclaim.com",
+    "description": "Reclaim is an AI-powered tool designed to assist with reclaim-related tasks.",
+    "category": "Productivity / Automation",
+    "isFree": false,
+    "rating": 3.1
+  },
+  {
+    "id": "9956eb01-341e-47ed-97cd-6f9735bf0631",
+    "name": "SlidesAI",
+    "logo": "https://cms-media.slidesai.io/wp-content/uploads/2025/03/31114219/Slidesai-logo.png",
+    "website": "https://www.slidesai.com",
+    "description": "SlidesAI is an AI-powered tool designed to assist with slidesai-related tasks.",
+    "category": "Presentation & Slides",
+    "isFree": false,
+    "rating": 3.6
+  },
+  {
+    "id": "ec9f0d5f-1e5b-4c32-9379-c38e90cbc334",
+    "name": "Decktopus",
+    "logo": "https://logo.clearbit.com/decktopus.com",
+    "website": "https://www.decktopus.com",
+    "description": "Decktopus is an AI-powered tool designed to assist with decktopus-related tasks.",
+    "category": "Presentation & Slides",
+    "isFree": true,
+    "rating": 3.6
+  },
+  {
+    "id": "0b070e1b-9abe-4f32-9936-c829763b428a",
+    "name": "Gamma",
+    "logo": "https://aimode.co/wp-content/uploads/2025/03/Gamma-App-Logo.webp",
+    "website": "https://www.gamma.com",
+    "description": "Gamma is an AI-powered tool designed to assist with gamma-related tasks.",
+    "category": "Presentation & Slides",
+    "isFree": true,
+    "rating": 2.2
+  },
+  {
+    "id": "32293543-6210-4665-91d0-5c0f4541a7ad",
+    "name": "Khroma",
+    "logo": "https://www.evernote.design/assets/images/khroma.jpg",
+    "website": "https://www.khroma.com",
+    "description": "Khroma is an AI-powered tool designed to assist with khroma-related tasks.",
+    "category": "Design & UI/UX",
+    "isFree": false,
+    "rating": 4.6
+  },
+  {
+    "id": "d6f1bdab-02d4-4b09-9b2f-6cc91a8e0dc6",
+    "name": "Uizard",
+    "logo": "https://logo.clearbit.com/uizard.com",
+    "website": "https://www.uizard.com",
+    "description": "Uizard is an AI-powered tool designed to assist with uizard-related tasks.",
+    "category": "Design & UI/UX",
+    "isFree": false,
+    "rating": 4.2
+  },
+  {
+    "id": "bb9ea8b6-3b27-42e0-acc2-01bfe919ef82",
+    "name": "Galileo AI",
+    "logo": "https://cdn.sanity.io/images/tf66morw/production/b6ba804260aa8c85927b129e1fba84a92ea3ad87-3400x744.svg?w=3400&h=744&auto=format",
+    "website": "https://www.galileoai.com",
+    "description": "Galileo AI is an AI-powered tool designed to assist with galileo-related tasks.",
+    "category": "Design & UI/UX",
+    "isFree": false,
+    "rating": 4.1
+  },
+  {
+    "id": "ba274a16-5bfd-413d-8254-00a252cd879b",
+    "name": "GPTZero",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu41C-PRJlN-wtcZ5IcoE_wzMIRaAp0UhbWg&s",
+    "website": "https://www.gptzero.com",
+    "description": "GPTZero is an AI-powered tool designed to assist with gptzero-related tasks.",
+    "category": "AI Detection",
+    "isFree": true,
+    "rating": 5.0
+  },
+  {
+    "id": "5125f38e-b184-421f-a981-da74bf035d8e",
+    "name": "CopyLeaks",
+    "logo": "https://logo.clearbit.com/copyleaks.com",
+    "website": "https://www.copyleaks.com",
+    "description": "CopyLeaks is an AI-powered tool designed to assist with copyleaks-related tasks.",
+    "category": "AI Detection",
+    "isFree": false,
+    "rating": 3.6
   }
 ]

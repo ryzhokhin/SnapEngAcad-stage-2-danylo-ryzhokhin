@@ -96,12 +96,12 @@ body {
   object-fit: contain;
 }
 
-.footer {
-  display: flex;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 10px;
-}
+/*.footer {*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  background-color: rgba(0, 0, 0, 0.3);*/
+/*  padding: 10px;*/
+/*}*/
 
 /*button {*/
 /*  text-align: center;*/
@@ -116,6 +116,19 @@ body {
 /*  cursor: pointer;*/
 /*  margin: 5px;*/
 /*}*/
+
+.footer{
+  margin-top: 6vh;
+  text-align: center;
+  color: #555;
+  font-size: 0.95rem;
+  padding: 3vh 2vw;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.03);
+}
+.footer strong {
+  color: #3e4de2;
+}
 
 
 
@@ -373,6 +386,9 @@ body {
   overflow: hidden;
 }
 
+/*---------------------*/
+
+/*---------------------*/
 
 .hero-title{
   position: relative;
@@ -432,12 +448,51 @@ body {
   left: 40vw;
 }
 
+.circle.four {
+  width: 25vw;
+  height: 25vw;
+  top: 35vh;
+  left: 15vw;
+  background: radial-gradient(
+          circle,
+          rgba(78, 182, 255, 0.2) 0%,
+          rgba(78, 182, 255, 0.1) 40%,
+          rgba(78, 182, 255, 0.05) 70%,
+          rgba(78, 182, 255, 0) 100%
+  );
+  animation: float-reverse 14s infinite ease-in-out;
+}
+
+.circle.five {
+  width: 18vw;
+  height: 18vw;
+  top: 2vh;
+  right: 5vw;
+  background: radial-gradient(
+          circle,
+          rgba(255, 119, 140, 0.2) 0%,
+          rgba(255, 119, 140, 0.1) 40%,
+          rgba(255, 119, 140, 0.05) 70%,
+          rgba(255, 119, 140, 0) 100%
+  );
+  animation: float-reverse 12s infinite ease-in-out;
+}
+
 @keyframes float {
   0%, 100% {
     transform: translateY(0) scale(1);
   }
   50% {
     transform: translateY(-20px) scale(1.05);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(20px) scale(1.05);
   }
 }
 
