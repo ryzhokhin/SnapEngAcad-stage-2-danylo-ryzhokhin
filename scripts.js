@@ -74,10 +74,10 @@ function editCardContent(card, tool) {
 
   const cardInfo = card.querySelector("ul");
   cardInfo.innerHTML = `
-    <li>Category: ${tool.category}</li>
-    <li>Free: ${tool.isFree ? "✅ Yes" : "❌ No"}</li>
-    <li>Description: ${tool.description}</li>
-    <li>Rating: ${tool.rating}</li>
+    <li><strong>Category:</strong> <span class="badge">${tool.category}</span></li>
+    <li><strong>Free:</strong> ${tool.isFree ? "✅ Yes" : "❌ No"}</li>
+    <li><strong>Description:</strong> ${tool.description}</li>
+    <li><strong>Rating:</strong> ${tool.rating}</li>
     <li class="star-container"></li>
     <li><a href="${tool.website}" target="_blank">Visit Website</a></li>  
   `

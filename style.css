@@ -2,6 +2,11 @@ html,
 body {
   margin: 0;
   padding: 0;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 * {
@@ -58,20 +63,52 @@ body {
 }
 
 .card-content h2 {
-  margin-top: 0;
-  font-size: 1.3rem;
-  color: #3e4de2;
+  font-size: 1.1rem;
+  margin: 0.5em 0 0.2em;
+  color: #4a38d3;
+  background: linear-gradient(90deg, #6b4df5, #9a57e9);
+  background-clip: text;
+  -webkit-background-clip: text;
+  /*color: transparent;*/
 }
 
 .card-content ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin-top: 1em;
   font-size: 0.95rem;
+  color: #444;
 }
 
 .card-content ul li {
-  margin: 0.5em 0;
+  margin: 0.3em 0;
+  line-height: 1.4;
+}
+
+.card-content ul li strong {
+  color: #7b3ff2;
+  font-weight: 600;
+}
+
+.card-content a {
+  color: #6c3dfd;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.card-content a:hover {
+  color: #4a1ddd;
+  text-decoration: underline;
+}
+.badge {
+  display: inline-block;
+  background: #efeaff;
+  color: #6b36db;
+  font-size: 0.9rem;
+  padding: 0.3em 0.6em;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .image-wrapper {
@@ -808,13 +845,24 @@ body {
 /*in between sections #2*/
 .cards-info {
   text-align: center;
-  font-size: 1.1rem;
-  color: #444;
+  font-size: 1.2rem;
+  color: #333;
   margin: 3vh auto 2vh;
   font-family: 'Inter', sans-serif;
-  max-width: 600px;
-  padding: 0 1em;
-  opacity: 0.85;
+  max-width: 700px;
+  padding: 1em 1.5em;
+  opacity: 1;
+  background: rgba(167, 75, 233, 0.06);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(167, 75, 233, 0.1);
+  transition: all 0.3s ease;
+}
+
+.cards-info strong{
+  color: #7b3ff2;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .stars{
