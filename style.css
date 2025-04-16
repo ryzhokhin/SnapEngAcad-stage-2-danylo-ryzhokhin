@@ -270,7 +270,7 @@ body::-webkit-scrollbar {
 #edit-tool-form {
   display: flex;
   flex-direction: column;
-  gap: 1.2em;
+  gap: 0.7em;
 }
 
 #edit-tool-form input[type="text"],
@@ -278,7 +278,7 @@ body::-webkit-scrollbar {
 #edit-tool-form textarea,
 #edit-tool-form select {
   padding: 0.8em 1em;
-  font-size: 1rem;
+  font-size: 0.9rem;
   border: 1px solid #ddd;
   border-radius: 12px;
   background-color: #f8f9ff;
@@ -291,7 +291,7 @@ body::-webkit-scrollbar {
   resize: vertical;
 }
 
-#edit-tool-form label {
+#edit-tool-form label.edit-checkbox {
   font-weight: 500;
   color: #333;
   font-size: 0.95rem;
@@ -299,6 +299,20 @@ body::-webkit-scrollbar {
   align-items: center;
   gap: 0.5em;
 }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  color: #666;
+  margin-bottom: 2px;
+  padding-left: 2px;
+}
+
 
 .edit-modal {
   position: fixed;
